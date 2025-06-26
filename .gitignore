@@ -1,0 +1,8 @@
+# Ignore executable files
+*.exe
+# Ignore specific file
+inference_classifier.exe
+# Ignore other large or temporary files (opsional)
+*.zip
+*.tar.gz
+*.log

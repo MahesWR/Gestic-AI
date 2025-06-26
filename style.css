@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Mengatur box-sizing untuk semua elemen */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url("ChatGPT Image 5 Apr 2025, 14.54.35.png") no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Menghilangkan scroll horizontal */
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 0px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.nav-logo img {
+    width: 100px;
+    height: 100px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #1e90ff;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10rem;
+    padding-top: 10rem;
+    background: linear-gradient(to left, transparent, rgba(0, 0, 0, 0.9));
+}
+
+#home {
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6)); /* Gradient untuk background */
+    width: 100vw; /* Lebar penuh dari viewport */
+    min-height: 40vh; /* Agar bagian ini tetap terlihat meskipun ukuran layar kecil */
+    padding: 10vw 5vw; /* Padding responsif dengan menggunakan vw */
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.imgicon {
+    font-size: 40px;
+    text-shadow: -5px 6px 6px #aaaaaa;
+}
+
+p {
+    font-size: 20px;
+    margin: 0 10px;
+    text-shadow: -5px 6px 6px #aaaaaa;
+}
+
+.buttons {
+    margin-top: 50px;
+}
+
+.discord {
+    background: #1e40ff;
+    color: white;
+    border: 1px solid #ffffff;
+    padding: 18px 15px;
+    margin: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.download {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    background: #1e40ff;
+    color: white;
+    border: 1px solid #ffffff;
+    padding: 20px 20px;
+    margin: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.download:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+}
+
+.buttons .discord {
+    background: #1a1a2e;
+}
+
+.section {
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 10rem;
+    text-shadow: -5px 6px 6px #aaaaaa;
+}
+
+#feature {
+    background: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.6));
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#feature2 {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.section p {
+    color: #aaa;
+    font-size: 1rem;
+}
+
+.section2 {
+    padding-top: 15rem;
+}
+.section2 h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    padding-top: 3rem;
+}
+
+.section2 p {
+    color: #aaa;
+    font-size: 1rem;
+}
+
+.badge {
+    color: #88aaff;
+    border: 1px solid #88aaff50;
+    padding: 8px 12px;
+    border-radius: 9999px;
+    display: inline-block;
+    font-size: 0.85rem;
+}
+
+.features {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feature-box {
+    background: linear-gradient(135deg, #0a0a0a, #111122);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 280px;
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.feature-box:hover {
+    box-shadow: 0 0 25px rgba(0, 102, 255, 0.3);
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    background: #000;
+    border-radius: 0.75rem;
+    display: inline-flex;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
+}
+
+.feature-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #88aaff;
+}
+
+.feature-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.feature-desc {
+    color: #aaa;
+    font-size: 0.95rem;
+}
+
+.img img{
+    padding-top: 7rem;
+    transform: rotateY(15deg) skewY(15deg); /* Miringkan gambar dengan efek 3D */
+    transition: transform 0.3s ease; /* Transisi halus saat efek berubah */
+}
+
+footer {
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+    padding: 2rem 0;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+    border-top: 1px solid white;
+}
+
+.main-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.left-footer, .right-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.left-footer img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.left-footer p {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.right-footer h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.right-footer p {
+    font-size: 1rem;
+    color: #bbb;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+/* Media Queries untuk tampilan kecil */
+@media screen and (max-width: 1440px) {
+    #home {
+        padding: 8vw 5vw; /* Padding lebih kecil pada layar besar */
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #home {
+        padding: 12vw 5vw; /* Padding lebih kecil untuk tablet */
+    }
+    .buttons {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #home {
+        padding: 15vw 5vw; /* Padding lebih kecil untuk layar kecil */
+    }
+    .buttons {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #home {
+        padding: 18vw 5vw; /* Padding lebih kecil untuk ponsel */
+    }
+    .buttons {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #home {
+        padding: 20vw 5vw; /* Padding lebih kecil untuk ponsel */
+    }
+    .buttons {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #home {
+        padding: 22vw 5vw; /* Padding lebih kecil untuk ponsel lebih kecil */
+    }
+    .buttons {
+        flex-direction: column;
+    }
+}
