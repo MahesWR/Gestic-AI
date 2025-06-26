@@ -1,128 +1,243 @@
 <!DOCTYPE html>
-<html lang="id">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Website MahesWara - Platform AI Interaktif" />
-        <meta name="keywords" content="AI, Gestic, MahesWara, Teknologi, Interaktif" />
-        <title>MahesWara Website</title>
-        <link rel="stylesheet" href="style.css" />
-        <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-    </head>
-    <body>
-        <nav data-aos="fade-down" data-aos-duration="1000" role="navigation" aria-label="Main Navigation">
-            <div class="nav-logo">
-                <img src="ChatGPT Image 13 Apr 2025, 09.16.35.png" alt="Logo MahesWara" />
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Website MahesWara - Platform AI Interaktif" />
+    <meta name="keywords" content="AI, Gestic, MahesWara, Teknologi, Interaktif" />
+    <title>MahesWara Website</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0A1E;
+            background-image: radial-gradient(circle at top, #1c1b29, #0f0e17);
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Ensures gradient stays fixed */
+        }
+
+        /* Hero image glow effect */
+        .image-glow {
+            position: relative;
+        }
+        .image-glow::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            height: 80%;
+            transform: translate(-50%, -50%);
+            background-image: radial-gradient(circle, rgba(167, 139, 250, 0.25), transparent 70%);
+            filter: blur(80px);
+            z-index: -1;
+            border-radius: 20px;
+        }
+
+        /* Button glow effect on hover */
+        .btn-glow {
+            transition: all 0.3s ease;
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 20px 0px rgba(192, 132, 252, 0.6);
+        }
+        
+        /* Feature card border glow on hover */
+        .feature-card {
+            background-color: rgba(30, 41, 59, 0.3);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            transition: all 0.3s ease;
+            position: relative; /* Needed for pseudo-element glow */
+            overflow: hidden; /* Ensures glow doesn't spill out */
+        }
+        .feature-card:hover {
+            border-color: rgba(167, 139, 250, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(167, 139, 250, 0.2);
+        }
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 120%; /* Larger to ensure full glow */
+            height: 120%; /* Larger to ensure full glow */
+            transform: translate(-50%, -50%) scale(0); /* Start scaled to 0 */
+            background-image: radial-gradient(circle, rgba(167, 139, 250, 0.1), transparent 70%);
+            filter: blur(40px);
+            z-index: -1;
+            border-radius: 50%; /* Circular glow */
+            transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Smooth transition */
+            opacity: 0; /* Start invisible */
+        }
+        .feature-card:hover::before {
+            transform: translate(-50%, -50%) scale(1); /* Scale up on hover */
+            opacity: 1; /* Fade in on hover */
+        }
+
+        /* Card 3D effect */
+        .card-3d {
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .card-3d-inner {
+            transition: transform 0.6s ease-out;
+            transform-style: preserve-3d;
+            padding: 2.5rem; /* Equivalent to p-10 */
+            background-color: rgba(30, 41, 59, 0.3); /* Same as feature-card background */
+            border: 1px solid rgba(51, 65, 85, 0.5); /* Same as feature-card border */
+            border-radius: 0.75rem; /* Equivalent to rounded-xl */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-3d-inner::before {
+            content: '';
+            position: absolute;
+            top: -20px; /* Position the glow behind and slightly above */
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background-image: radial-gradient(circle, rgba(167, 139, 250, 0.2), transparent 70%);
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.7;
+            border-radius: 1.5rem; /* Larger radius for glow */
+        }
+
+    </style>
+</head>
+<body class="text-white">
+
+    <nav class="flex justify-between items-center px-4 md:px-8 py-6 bg-transparent fixed w-full z-50 backdrop-blur-sm bg-gray-900/20">
+        <a href="#home" class="flex items-center space-x-3">
+            <img src="ChatGPT Image 13 Apr 2025, 09.16.35.png" alt="Logo MahesWara" class="w-10 h-10" />
+            <span class="text-xl font-bold">MahesWara</span>
+        </a>
+        <div class="hidden md:flex space-x-8 text-lg font-medium">
+            <a href="#home" class="hover:text-purple-400 transition-colors">Home</a>
+            <a href="#feature" class="hover:text-purple-400 transition-colors">Features</a>
+            <a href="#contact" class="hover:text-purple-400 transition-colors">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home" class="pt-40 pb-20 text-center px-4">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 leading-tight">
+            Gestic AI: <br class="md:hidden">Redefining Interaction.
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">
+            Experience intuitive control and seamless engagement, one hand at a time.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center mt-10 gap-4">
+            <a href="./inference_classifier.exe" download class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold btn-glow">
+                <i class="fas fa-download mr-2"></i>Download Now
+            </a>
+            <a href="#contact" class="bg-gray-700 text-white hover:bg-gray-600 px-8 py-3 rounded-lg font-semibold transition-colors">
+                <i class="fas fa-phone mr-2"></i>Get in Touch
+            </a>
+        </div>
+    </section>
+
+    <section id="feature" class="py-20 px-4 text-center">
+        <div>
+            <span class="text-sm bg-purple-700/50 border border-purple-500 text-purple-300 px-4 py-1.5 rounded-full">Discover Our Advantages</span>
+            <h2 class="text-4xl md:text-5xl font-bold mt-4">Why Gestic AI Stands Out</h2>
+            <p class="text-gray-400 mt-2 max-w-xl mx-auto">Every reason to choose Gestic AI, none to doubt it.</p>
+        </div>
+
+        <div class="mt-16 container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="feature-card p-8 rounded-xl text-center">
+                <div class="mb-4 text-purple-400 text-5xl flex justify-center">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Completely Free</h3>
+                <p class="text-gray-400">Enjoy full access to all features without any hidden costs, forever.</p>
             </div>
-            <div class="nav-links">
-                <a href="#home" aria-label="Home Section">Home</a>
-                <a href="#feature" aria-label="Projects Section">Features</a>
-                <a href="#contact" aria-label="Contact Section">Contact</a>
+            <div class="feature-card p-8 rounded-xl text-center">
+                <div class="mb-4 text-purple-400 text-5xl flex justify-center">
+                    <i class="fa-solid fa-rocket"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Continuously Improving</h3>
+                <p class="text-gray-400">We are dedicated to constant learning and development, ensuring you always have the best.</p>
             </div>
-        </nav>
-        <main>
-            <section id="home" aria-labelledby="home-heading">
-                <div class="imgicon" data-aos="fade-up" data-aos-duration="1000">
-                    <h1 id="home-heading">Gestic AI</h1>
+            <div class="feature-card p-8 rounded-xl text-center">
+                <div class="mb-4 text-purple-400 text-5xl flex justify-center">
+                    <i class="fa-solid fa-bolt"></i>
                 </div>
-                <p data-aos="fade-up" data-aos-duration="1000">
-                    Redefining Interaction, One Hand at a Time.
-                </p>
-                <div class="buttons" data-aos="fade-up" data-aos-duration="1000">
-                    <a href="./inference_classifier.exe" class="download" role="button" aria-label="Download Gestic AI" download="inference_classifier.exe">Download</a>
-                    <a href="#contact" class="discord" role="button" aria-label="Contact MahesWara">📞 Contact</a>
+                <h3 class="text-2xl font-bold mb-2">Rapid Updates</h3>
+                <p class="text-gray-400">Benefit from frequent updates and exciting new features delivered regularly.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta" class="py-20 px-4 text-center">
+        <div class="mb-10">
+            <span class="text-sm bg-purple-700/50 border border-purple-500 text-purple-300 px-4 py-1.5 rounded-full">Ready to Transform Your Interaction?</span>
+            <h2 class="text-4xl md:text-5xl font-bold mt-4">Start Your Gestic AI Journey Now!</h2>
+            <p class="text-gray-400 mt-2 max-w-xl mx-auto">Unlock the power of intuitive gesture control today, absolutely free.</p>
+        </div>
+
+        <div class="flex justify-center gap-4 mb-12">
+            <a href="https://github.com/MahesWR" target="_blank" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold btn-glow">
+                <i class="fab fa-github mr-2"></i>Get Started on GitHub
+            </a>
+            <a href="#contact" class="bg-gray-700 text-white hover:bg-gray-600 px-8 py-3 rounded-lg font-semibold transition-colors">
+                <i class="fas fa-phone mr-2"></i>Contact Our Team
+            </a>
+        </div>
+
+        <div class="container mx-auto max-w-4xl card-3d">
+            <div class="card-3d-inner">
+                <img src="image.png" alt="Gestic AI Preview" class="mx-auto w-full rounded-lg shadow-2xl" />
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="mt-20 py-16 px-4 bg-gray-900/50 border-t border-gray-800">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-8 md:mb-0">
+                <div class="flex justify-center md:justify-start items-center space-x-3 mb-4">
+                    <img src="ChatGPT Image 13 Apr 2025, 09.16.35.png" alt="Logo MahesWara" class="w-12 h-12" />
+                    <span class="text-xl font-bold">MahesWara</span>
                 </div>
-            </section>
-
-            <section id="feature" aria-labelledby="project-heading">
-                <div class="section" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="badge">Features</div>
-                    <h2 id="project-heading">Why Must Us?</h2>
-                    <p>Every reason to choose Gestic Ai, none to doubt it.</p>
-                </div>
-
-                <div class="features" data-aos="fade-up" data-aos-duration="1000">
-                    <!-- Feature Box 1 -->
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M12 1a1 1 0 0 1 1 1v1.06c2.282.248 4 2.19 4 4.44 0 2.21-1.72 4-4 4v2c2.282.248 4 2.19 4 4.44 0 2.21-1.72 4-4 4V22a1 1 0 1 1-2 0v-1.06c-2.282-.248-4-2.19-4-4.44 0-2.21 1.72-4 4-4v-2c-2.282-.248-4-2.19-4-4.44 0-2.21 1.72-4 4-4V2a1 1 0 0 1 1-1z" />
-                            </svg>
-                        </div>
-                        <div class="feature-title">100% Free</div>
-                        <div class="feature-desc">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, error.
-                        </div>
-                    </div>
-                    <!-- Feature Box 2 -->
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M3 17l4-4 4 4 6-6 4 4v5H3v-3z" />
-                            </svg>
-                        </div>
-                        <div class="feature-title">Always Improving</div>
-                        <div class="feature-desc">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, porro.
-                        </div>
-                    </div>
-                    <!-- Feature Box 3 -->
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M17.65 6.35A8 8 0 0 0 12 4V1L7 6l5 5V7a6 6 0 1 1-6 6H4a8 8 0 1 0 13.65-6.65z" />
-                            </svg>
-                        </div>
-                        <div class="feature-title">Fast Updates</div>
-                        <div class="feature-desc">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, accusantium!
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="feature2" aria-labelledby="project-heading">
-                <div class="section2" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="badge">What Are You Waiting For?</div>
-                    <h2 id="project-heading">Start Using GESTIC AI!</h2>
-                    <p>Unlock the power of Gestic Ai now, completely free.</p>
-                </div>
-
-                <div class="buttons" data-aos="fade-up" data-aos-duration="1000">
-                    <a href="https://github.com/MahesWR" class="download" role="button" aria-label="Download Gestic AI">Download</a>
-                    <a href="#contact" class="discord" role="button" aria-label="Contact MahesWara">📞 Contact</a>
-                </div>
-
-                <div class="img" data-aos="fade-down" data-aos-duration="1000">
-                    <img src="image.png" alt="" width="500px">
-                </div>
-            </section>
-        </main>
-
-        <footer id="contact">
-            <div class="main-footer">
-                <div class="left-footer">
-                    <img src="ChatGPT Image 13 Apr 2025, 09.16.35.png" alt="Logo MahesWara" />
-                    <p>&copy; 2025 - Gestic Ai. All Rights Reserved</p>
-                </div>
-
-                <div class="right-footer">
-                    <h3>Contact Us</h3>
-                    <p>Email: contact@maheswara.com</p>
-                    <p>Phone: +62 123 456 789</p>
-
-                    <div class="social-icons">
-                        <a href="#" target="_blank" aria-label="Instagram">📱</a>
-                        <a href="#" target="_blank" aria-label="Website">🌍</a>
-                        <a href="#" target="_blank" aria-label="WhatsApp">💬</a>
-                    </div>
+                <p class="text-gray-400">&copy; 2025 - Gestic AI. All Rights Reserved.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-white">Contact Us</h3>
+                <p class="text-gray-400">Email: <a href="mailto:contact@maheswara.com" class="hover:text-purple-400">contact@maheswara.com</a></p>
+                <p class="text-gray-400">Phone: <a href="tel:+62123456789" class="hover:text-purple-400">+62 123 456 789</a></p>
+                <div class="flex space-x-4 mt-4 justify-center md:justify-start">
+                    <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-purple-400 text-2xl transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Website" class="text-gray-400 hover:text-purple-400 text-2xl transition-colors"><i class="fas fa-globe"></i></a>
+                    <a href="#" aria-label="WhatsApp" class="text-gray-400 hover:text-purple-400 text-2xl transition-colors"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
-        <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
-    </body>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetElement = document.querySelector(this.getAttribute('href'));
+                if(targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
 </html>
